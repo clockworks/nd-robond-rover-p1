@@ -126,7 +126,8 @@ def perception_step(Rover):
 
     Rover.nav_angles = angles
 
-    rock_map = find_rocks((warped * 255), levels=(110, 110, 50))
+    #rock_map = find_rocks((warped * 255), levels=(110, 110, 50))
+    rock_map = find_rocks((warped), levels=(110, 110, 50))
     if rock_map.any():
         rock_x, rock_y = rover_coords(rock_map)
         rock_x_world, rock_y_world = pix_to_world(rock_x, rock_y, Rover.pos[0], \
